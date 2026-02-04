@@ -1,4 +1,5 @@
 import { createHomeStyles } from "@/assets/styles/home.styles";
+import Header from "@/components/Header";
 import useTheme from "@/hooks/useTheme";
 import { LinearGradient } from 'expo-linear-gradient';
 import { StatusBar, Text, TouchableOpacity } from "react-native";
@@ -15,7 +16,7 @@ export default function Index() {
       <SafeAreaView
         style={homeStyles.safeArea}
       >
-        <Text>Hi</Text>
+        <Header />
         <TouchableOpacity onPress={toggleDarkMode}>
           <Text>toggle the mode</Text>
         </TouchableOpacity>
