@@ -73,7 +73,7 @@ const darkColors: ColorScheme = {
         surface: ["#1e293b", "#334155"],
         primary: ["#3b82f6", "#1d4ed8"],
         success: ["#10b981", "#059669"],
-        warning: ["#f59e0b", "d97706"],
+        warning: ["#f59e0b", "#d97706"],
         danger: ["#ef4444", "#dc2626"],
         muted: ["#374151", "#4b5563"],
         empty: ["#374151", "#4b5563"]
