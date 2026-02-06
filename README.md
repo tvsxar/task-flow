@@ -1,50 +1,126 @@
-# Welcome to your Expo app 👋
+# Task Flow
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A mobile task management application built with React Native (Expo) and Convex.
+The app allows users to create, manage, and persist daily tasks with a clean architecture and scalable backend.
+The main focus of the project is mobile architecture, state management, theme handling, and real-time backend interaction using Convex.
 
-## Get started
+---
+
+## Table of Contents
+
+- [Description](#description)
+- [Live Demo](#live-demo)
+- [Features](#features)
+- [Technologies & Stack Explanation](#technologies--stack-explanation)
+- [Architecture & Flow](#architecture--flow)
+- [Installation & Run](#installation--run)
+- [Project Structure](#project-structure)
+- [Author](#author)
+
+---
+
+## Description
+
+Task Flow allows users to:
+
+- Create and manage daily tasks
+- Mark tasks as completed
+- Edit and delete tasks
+- Persist data using a backend database
+- Switch between light and dark themes
+- Experience a clean, mobile-first UI
+
+The application is built with **React Native using Expo**, while the backend logic and data persistence are handled by **Convex**.
+
+---
+
+## Live Demo
+
+Try it online via our [Live Demo](https://movie-hub-next.onrender.com)!
+
+---
+
+## Features
+
+- Create, update, delete tasks
+- Toggle task completion
+- Persistent task storage (Convex backend)
+- Real-time data synchronization
+- Light / Dark theme support
+- Theme persistence with AsyncStorage
+- Clean separation of frontend and backend logic
+- Mobile-first UI architecture
+- Type-safe backend schema and mutations
+
+---
+
+## Technologies & Stack Explanation
+
+- **React Native** — mobile application framework
+- **Expo** — development environment and tooling
+- **Expo Router** — file-based navigation
+- **TypeScript** — static typing and safer code
+- **Convex** — backend-as-a-service with real-time database
+- **AsyncStorage** — local persistence for user preferences
+- **Context API** — global state management (theme)
+- **Ionicons** — icon set for mobile UI
+
+---
+
+## Architecture & Flow
+
+_Tasks Flow_ 1. App fetches tasks using Convex queries 2. User creates or updates a task 3. Frontend triggers Convex mutations 4. Backend updates the database 5. UI re-renders automatically with updated data
+
+_Theme Flow_ 1. User toggles theme mode 2. Theme state is updated via ThemeContext 3. Preference is saved in AsyncStorage 4. Theme is restored on app launch
+
+---
+
+## Installation & Run
+
+### 1. The Quickest Way (Docker Compose)
 
 1. Install dependencies
 
-   ```bash
-   npm install
-   ```
-
-2. Start the app
-
-   ```bash
-   npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
 ```bash
-npm run reset-project
+npm install
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+2. Start Expo development server
 
-## Learn more
+```bash
+npx expo start
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+3. Run on device
+   • iOS Simulator (via Xcode)
+   • Android Emulator
+   • Physical device via Expo Go
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+---
 
-## Join the community
+## Project Structure
 
-Join our community of developers creating universal apps.
+```
+task-flow/
+├─ app/
+│  ├─ (tabs)/
+│  │  ├─ index.tsx
+│  │  └─ settings.tsx
+│  ├─ _layout.tsx
+├─ convex/
+│  ├─ schema.ts
+│  └─ tasks.ts
+├─ hooks/
+│  └─ useTheme.tsx
+├─ assets/
+│  └─ styles/
+├─ package.json
+└─ app.json
+```
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+---
+
+## Author
+
+**Taras Poiatsyka**\
+[GitHub](https://github.com/tvsxar)
